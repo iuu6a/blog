@@ -1,0 +1,210 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>基于Windows封装系统，Microsoft Store应用消失解决方案 | IUU6&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.rzly.net/favicon.ico?v=1729921848626">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.rzly.net/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            IUU6&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            Home
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            Archives
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            Tags
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            About
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/friends" class="menu gt-a-link">
+                            Friends
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1729921848626" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    基于Windows封装系统，Microsoft Store应用消失解决方案
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-03-10 ·
+                    </time>
+                    
+                        <a href="https://blog.rzly.net/tag/system/" class="post-tags">
+                            # System
+                        </a>
+                    
+                        <a href="https://blog.rzly.net/tag/maintain/" class="post-tags">
+                            # Maintain
+                        </a>
+                    
+                        <a href="https://blog.rzly.net/tag/problem/" class="post-tags">
+                            # Problem
+                        </a>
+                    
+                        <a href="https://blog.rzly.net/tag/patch/" class="post-tags">
+                            # Patch
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="错误概览">错误概览</h1>
+<figure data-type="image" tabindex="1"><img src="https://blog.rzly.net/post-images/1710040005707.png" alt="" loading="lazy"></figure>
+<p>Microsoft Store中有许多有用得功能，但是在封装时如果有联网操作或者其他操作不当，Microsoft Store应用也会变成单用户安装，不知道为什么。（参见[基于WIndows英文原版封装系统为中文时出现的错误修正]: https://blog.rzly.net/post/dism_install_for_all_user/）</p>
+<h1 id="错误分析">错误分析</h1>
+<p>我们知道通过微软商城或者add-appxpackage命令安装的包都是仅仅为<strong>单用户</strong>安装了，所以说在封装系统新建的用户就没有这些包了</p>
+<h1 id="错误修正">错误修正</h1>
+<p>我们可以在 https://store.rg-adguard.net/ 下载这些应用的官方安装包，注意下载后缀一般为.Msixbundle。</p>
+<figure data-type="image" tabindex="2"><img src="https://blog.rzly.net/post-images/1710040371831.png" alt="" loading="lazy"></figure>
+<p>然后在封装执行前使用Dism安装，为了方便安装，可以使用以下Bat脚本。</p>
+<pre><code>@echo off
+setlocal enabledelayedexpansion
+
+REM 设置你的目录路径
+set &quot;directory_path=C:\Sysprep\AppUpdate&quot;
+
+REM 进入指定的目录
+cd /d &quot;%directory_path%&quot;
+
+REM 遍历目录下所有的.Msixbundle文件
+for %%f in (*.Msixbundle) do (
+    REM 执行DISM命令
+    DISM /Online /Add-ProvisionedAppxPackage /packagePath:&quot;!directory_path!\%%f&quot; /SkipLicense
+)
+
+REM 结束批处理脚本
+endlocal
+</code></pre>
+<p>注意：你需要把 <strong>C:\Sysprep\AppUpdate</strong> 修改为你的路径</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.rzly.net/post/dism_install_for_all_user/" class="post-title gt-a-link">
+                    基于WIndows英文原版封装系统为中文时出现的错误修正
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">From the root, begin anew. </div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/iuu6" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Made by <a href="https://github.com/iuu6" target="_blank">IUU6</a> with heart ❤️~
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://blog.rzly.net/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

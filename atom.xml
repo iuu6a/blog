@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.rzly.net</id>
+    <title>IUU6&apos;s Blog</title>
+    <updated>2024-10-26T05:50:50.627Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.rzly.net"/>
+    <link rel="self" href="https://blog.rzly.net/atom.xml"/>
+    <subtitle>From the root, begin anew. </subtitle>
+    <logo>https://blog.rzly.net/images/avatar.png</logo>
+    <icon>https://blog.rzly.net/favicon.ico</icon>
+    <rights>All rights reserved 2024, IUU6&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[「回中网安」3：密码学——古典密码学]]></title>
+        <id>https://blog.rzly.net/post/hmisl_crypto_1/</id>
+        <link href="https://blog.rzly.net/post/hmisl_crypto_1/">
+        </link>
+        <updated>2024-05-27T04:46:20.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[「回中网安」2：动手实践初步入门-学习单]]></title>
+        <id>https://blog.rzly.net/post/hmisl_course_2/</id>
+        <link href="https://blog.rzly.net/post/hmisl_course_2/">
+        </link>
+        <updated>2024-05-20T13:39:18.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows联网后却显示未联网的一种解决方案]]></title>
+        <id>https://blog.rzly.net/post/windows_network_patch/</id>
+        <link href="https://blog.rzly.net/post/windows_network_patch/">
+        </link>
+        <updated>2024-05-14T04:28:04.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Arduino 开发笔记 <持续更新>]]></title>
+        <id>https://blog.rzly.net/post/arduino_notebook/</id>
+        <link href="https://blog.rzly.net/post/arduino_notebook/">
+        </link>
+        <updated>2024-05-12T04:18:50.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[一些比较优秀的语录~]]></title>
+        <id>https://blog.rzly.net/post/better_quotes/</id>
+        <link href="https://blog.rzly.net/post/better_quotes/">
+        </link>
+        <updated>2024-04-20T08:58:16.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Debian安装时换源方法]]></title>
+        <id>https://blog.rzly.net/post/debian_install_sources/</id>
+        <link href="https://blog.rzly.net/post/debian_install_sources/">
+        </link>
+        <updated>2024-04-14T03:20:22.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用GitHub Action在repo指定目录中创建GitHub贡献贪吃蛇svg]]></title>
+        <id>https://blog.rzly.net/post/github_action_snake/</id>
+        <link href="https://blog.rzly.net/post/github_action_snake/">
+        </link>
+        <updated>2024-03-22T12:46:23.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GitBook基于MarkDown制作电子书]]></title>
+        <id>https://blog.rzly.net/post/make_MD_Book/</id>
+        <link href="https://blog.rzly.net/post/make_MD_Book/">
+        </link>
+        <updated>2024-03-17T00:34:28.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[隐藏Windows「安全删除硬件」里的USB/其他设备]]></title>
+        <id>https://blog.rzly.net/post/reg_disable_delete_devices/</id>
+        <link href="https://blog.rzly.net/post/reg_disable_delete_devices/">
+        </link>
+        <updated>2024-03-15T12:38:22.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[基于Windows封装系统，Microsoft Store应用消失解决方案]]></title>
+        <id>https://blog.rzly.net/post/msixbundle_for_all_user/</id>
+        <link href="https://blog.rzly.net/post/msixbundle_for_all_user/">
+        </link>
+        <updated>2024-03-10T03:05:01.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[基于WIndows英文原版封装系统为中文时出现的错误修正]]></title>
+        <id>https://blog.rzly.net/post/dism_install_for_all_user/</id>
+        <link href="https://blog.rzly.net/post/dism_install_for_all_user/">
+        </link>
+        <updated>2024-03-10T02:54:14.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VMware安装MacOS系统教程②——简易且可以直接上手的VMware打包系统]]></title>
+        <id>https://blog.rzly.net/post/vmware_macos_aio/</id>
+        <link href="https://blog.rzly.net/post/vmware_macos_aio/">
+        </link>
+        <updated>2024-02-18T02:03:36.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VMware安装MacOS系统教程①——VMware的安装&解锁]]></title>
+        <id>https://blog.rzly.net/post/vmware_unlock_macos/</id>
+        <link href="https://blog.rzly.net/post/vmware_unlock_macos/">
+        </link>
+        <updated>2024-02-18T01:59:39.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用Proxifier进行真全局代理并分流]]></title>
+        <id>https://blog.rzly.net/post/proxifier_proxy/</id>
+        <link href="https://blog.rzly.net/post/proxifier_proxy/">
+        </link>
+        <updated>2024-02-17T12:35:31.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[宝塔面板 为知笔记私有化部署+无数人空间激活方案]]></title>
+        <id>https://blog.rzly.net/post/wiznote_patch/</id>
+        <link href="https://blog.rzly.net/post/wiznote_patch/">
+        </link>
+        <updated>2024-02-17T08:40:56.000Z</updated>
+    </entry>
+</feed>

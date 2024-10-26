@@ -1,0 +1,205 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>使用Proxifier进行真全局代理并分流 | IUU6&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.rzly.net/favicon.ico?v=1729921848626">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.rzly.net/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            IUU6&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            Home
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            Archives
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            Tags
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            About
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/friends" class="menu gt-a-link">
+                            Friends
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1729921848626" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    使用Proxifier进行真全局代理并分流
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-02-17 ·
+                    </time>
+                    
+                        <a href="https://blog.rzly.net/tag/network/" class="post-tags">
+                            # Network
+                        </a>
+                    
+                        <a href="https://blog.rzly.net/tag/utility/" class="post-tags">
+                            # Utility
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>Proxifier 允许不支持通过代理服务器工作的网络应用程序通过 SOCKS 或 HTTPS 代理和链进行操作。<br>
+<a href="https://www.proxifier.com/">这里</a> 是Proxifier的官网，你可以在这里下载和购买Proxifier。</p>
+<h1 id="激活">激活</h1>
+<p>为了方便学习使用，我特别提供的学习使用的激活码</p>
+<figure data-type="image" tabindex="1"><img src="https://blog.rzly.net/post-images/1708174086452.png" alt="" loading="lazy"></figure>
+<pre><code>L6Z8A-XY2J4-BTZ3P-ZZ7DF-A2Q9C（Portable Edition）
+5EZ8G-C3WL5-B56YG-SCXM9-6QZAP（Standard Edition）
+P427L-9Y552-5433E-8DSR3-58Z68（MAC）
+</code></pre>
+<h1 id="配置教程">配置教程</h1>
+<br>
+<h2 id="1-设置代理服务器">1、设置代理服务器</h2>
+<p>点击这里打开代理服务器设置<br>
+<img src="https://blog.rzly.net/post-images/1708174662972.png" alt="" loading="lazy"></p>
+<p>设置代理服务器<br>
+<img src="https://blog.rzly.net/post-images/1708176220102.png" alt="" loading="lazy"></p>
+<p>如果你有多个代理，需要设置负载均衡等，可以点击Proxy Chains，并通过Types选择负载均衡方式<br>
+<img src="https://blog.rzly.net/post-images/1708176322679.png" alt="" loading="lazy"><br>
+<img src="https://blog.rzly.net/post-images/1708176324409.png" alt="" loading="lazy"></p>
+<h2 id="2-配置代理规则">2、配置代理规则</h2>
+<p>打开这里配置代理规则<br>
+<img src="https://blog.rzly.net/post-images/1708176406010.png" alt="" loading="lazy"></p>
+<p>例如我设置全局都走代理，只有下载、直播和本地不经过代理<br>
+<img src="https://blog.rzly.net/post-images/1708176581663.png" alt="" loading="lazy"></p>
+<p><strong>注意⚠：如果你使用v2rayN等本地代理，需要将其主程序添加到直链中，否则会造成本地网络环路！</strong></p>
+<h2 id="3-设置dns解析方式">3、设置DNS解析方式</h2>
+<p>如果你想解决DNS污染问题，可以按照以下方式配置<br>
+<img src="https://blog.rzly.net/post-images/1708176733559.png" alt="" loading="lazy"><br>
+<img src="https://blog.rzly.net/post-images/1708176823070.png" alt="" loading="lazy"></p>
+<h1 id="愉快的开始使用">愉快的开始使用</h1>
+<p>现在你已经完成了配置，可以愉快地使用了~Proxifier还有很多有趣的用法，期待你的探索！</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.rzly.net/post/wiznote_patch/" class="post-title gt-a-link">
+                    宝塔面板 为知笔记私有化部署+无数人空间激活方案
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">From the root, begin anew. </div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/iuu6" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Made by <a href="https://github.com/iuu6" target="_blank">IUU6</a> with heart ❤️~
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://blog.rzly.net/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

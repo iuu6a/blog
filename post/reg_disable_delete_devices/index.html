@@ -1,0 +1,212 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>隐藏Windows「安全删除硬件」里的USB/其他设备 | IUU6&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.rzly.net/favicon.ico?v=1729921848626">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.rzly.net/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            IUU6&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            Home
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            Archives
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            Tags
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            About
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/friends" class="menu gt-a-link">
+                            Friends
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1729921848626" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    隐藏Windows「安全删除硬件」里的USB/其他设备
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-03-15 ·
+                    </time>
+                    
+                        <a href="https://blog.rzly.net/tag/system/" class="post-tags">
+                            # System
+                        </a>
+                    
+                        <a href="https://blog.rzly.net/tag/maintain/" class="post-tags">
+                            # Maintain
+                        </a>
+                    
+                        <a href="https://blog.rzly.net/tag/problem/" class="post-tags">
+                            # Problem
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="错误概述">错误概述</h1>
+<blockquote>
+<p>前言：在学校维护希沃时，发现经常有人喜欢把希沃焊接在主板上的无线网卡弹出，影响上课（虽然重启就能恢复了）</p>
+</blockquote>
+<h1 id="解决方案">解决方案</h1>
+<br>
+<h2 id="首先打开设备管理器winr-devmgmtmsc找到要隐藏的设备">首先打开设备管理器（Win+R devmgmt.msc），找到要隐藏的设备</h2>
+<figure data-type="image" tabindex="1"><img src="https://blog.rzly.net/post-images/1710543934641.png" alt="" loading="lazy"></figure>
+<p>（由于不在校内，先使用自己电脑作为演示）</p>
+<h2 id="双击进入设备设置">双击进入设备设置</h2>
+<p>关闭电源管理中的自动关闭此设备<br>
+<img src="https://blog.rzly.net/post-images/1710544052539.png" alt="" loading="lazy"></p>
+<p>在详细信息中找到硬件ID<br>
+<img src="https://blog.rzly.net/post-images/1710544083415.png" alt="" loading="lazy"></p>
+<h2 id="修改注册表">修改注册表</h2>
+<p>打开注册表编辑器（Win+R regedit），定位到以下条目</p>
+<pre><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://blog.rzly.net/post-images/1710544244845.png" alt="" loading="lazy"></figure>
+<p>然后找到与设备硬件ID相符合的条目（开头为PCI就是PCI表内，USB就是USB表内）（希沃是USB），进入</p>
+<p>由于电脑的这个网卡不支持修改（以下部分图片转载自PCBeta）</p>
+<p>接着着双击 “硬件id”对应的注册表项打开对应的子项，右侧窗格有个WORD的名称为 “Capabilities”,记住你要修改的“Capabilities”所在的路径，等会要用。下图是我的“Capabilities”路径，每个电脑硬件Id不同后三部分的路径也不同。<br>
+<img src="https://blog.rzly.net/post-images/1710544526932.png" alt="" loading="lazy"></p>
+<p>修改“Capabilities”十进制下在原值上-4，这里我的原值十进制是22，-4后就是18，然后填上18，记住你-4后的十进制数值，之后还要用。<br>
+<img src="https://blog.rzly.net/post-images/1710544577843.png" alt="" loading="lazy"></p>
+<h2 id="设置每次都这样">设置每次都这样</h2>
+<p>打开“boostmaster.exe”软媒优化大师，点击 “启动项” – 点击“添加开机启动项”</p>
+<figure data-type="image" tabindex="3"><img src="https://blog.rzly.net/post-images/1710544655412.png" alt="" loading="lazy"></figure>
+<pre><code>add 你第五步修改的“Capabilities”所在路径 /v Capabilities /t REG_DWORD /d 你第五步修改后的“Capabilities”十进制的值 /f
+</code></pre>
+<p>例如：</p>
+<pre><code>add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\PCI\VEN_8086&amp;DEV_10D3&amp;SUBSYS_07D015AD&amp;REV_00\000C29FFFF8CE83500 /v Capabilities /t REG_DWORD /d 18 /f
+</code></pre>
+<p>这样重启也不会还原啦~！</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.rzly.net/post/msixbundle_for_all_user/" class="post-title gt-a-link">
+                    基于Windows封装系统，Microsoft Store应用消失解决方案
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">From the root, begin anew. </div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/iuu6" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Made by <a href="https://github.com/iuu6" target="_blank">IUU6</a> with heart ❤️~
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://blog.rzly.net/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

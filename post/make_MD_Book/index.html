@@ -1,0 +1,464 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>GitBook基于MarkDown制作电子书 | IUU6&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.rzly.net/favicon.ico?v=1729921848626">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.rzly.net/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            IUU6&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            Home
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            Archives
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            Tags
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            About
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/friends" class="menu gt-a-link">
+                            Friends
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1729921848626" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    GitBook基于MarkDown制作电子书
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-03-17 ·
+                    </time>
+                    
+                        <a href="https://blog.rzly.net/tag/maintain/" class="post-tags">
+                            # Maintain
+                        </a>
+                    
+                        <a href="https://blog.rzly.net/tag/website/" class="post-tags">
+                            # Website
+                        </a>
+                    
+                        <a href="https://blog.rzly.net/tag/utility/" class="post-tags">
+                            # Utility
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="安装特定版本的nodejs">安装特定版本的Node.js</h1>
+<p>GitBook项目已经停止维护，所以说不支持最新版本的Node.js，我们需要安装旧版本的Node.js。<br>
+经过大量测试后发现V10.24.1是可以正常运作GitBook的。以下是下载链接<br>
+https://nodejs.org/download/release/v10.24.1/<br>
+请按照需要下载特定版本<br>
+<img src="https://blog.rzly.net/post-images/1710635835902.png" alt="" loading="lazy"></p>
+<p><strong>如果之前下载过高版本需要彻底卸载或者使用多版本管理器</strong></p>
+<h1 id="通过-npm-安装-gitbook-cli">通过 npm 安装 gitbook-cli</h1>
+<p>安装命令（使用cmd或其他命令方式安装）：</p>
+<pre><code>npm install -g gitbook-cli
+</code></pre>
+<p>执行<code>gitbook -V</code>查看是否正确安装</p>
+<pre><code>$ gitbook -V
+CLI version: 2.3.2
+GitBook version: 3.2.3
+</code></pre>
+<h1 id="安装ebook-convert">安装ebook-convert</h1>
+<p><code>ebook-convert</code> 是能够自由转化格式的一个命令行工具，包含在 calibre 软件中</p>
+<h2 id="windows用户">WIndows用户</h2>
+<p>在官网： https://calibre-ebook.com/ 下载安装</p>
+<p>安装后在命令行执行<code>ebook-convert --version</code>查看是否安装成功</p>
+<pre><code>$ ebook-convert --version
+ebook-convert.exe (calibre 7.7.0)
+Created by: Kovid Goyal &lt;kovid@kovidgoyal.net&gt;
+</code></pre>
+<p>如果安装后没有出现，则需要将<strong>安装目录</strong>添加到<strong>PATH</strong>中！</p>
+<h2 id="mac用户">Mac用户</h2>
+<p>在官网： https://calibre-ebook.com/ 下载安装<br>
+执行如下命令，把 <code>ebook-convert</code> <strong>软链接</strong>到 <code>bin</code> 目录：</p>
+<pre><code>sudo ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/bin
+</code></pre>
+<p>如果出现<code>Operation not permitted</code>异常，说明系统权限限制，此时需要<strong>配置环境变量</strong>。<br>
+vim编辑<code>~/.bash_profile</code></p>
+<pre><code>vim ~/.bash_profile
+
+# 将下面这两行配置，添加到 .bash_profile 文件中
+export EBOOK_PATH=/Applications/calibre.app/Contents/MacOS
+export PATH=$PATH:$EBOOK_PATH
+</code></pre>
+<p>刷新刚刚的配置</p>
+<pre><code>source ~/.bash_profile
+</code></pre>
+<p>验证<code>ebook-convert</code>是否能正常使用：</p>
+<pre><code>ebook-convert --version
+</code></pre>
+<h2 id="linux用户">Linux用户</h2>
+<p>与Mac类似，不多加赘述。</p>
+<h1 id="配置电子书的目录">配置电子书的目录</h1>
+<p>在本地新建一个空目录，用来存放电子书和配置文件等</p>
+<h2 id="项目初始化">项目初始化</h2>
+<pre><code>gitbook init
+</code></pre>
+<p>此时，项目下会自动生成如下两个文件：（<strong>非常重要，必不可少</strong>）</p>
+<ul>
+<li><code>README.md</code>：书籍的简介放在这个文件里。</li>
+<li><code>SUMMARY.md</code>：书籍的<strong>目录结构</strong>在这里配置。</li>
+</ul>
+<h2 id="配置电子书的目录-2">配置电子书的目录</h2>
+<p>我们先把本地的 markdown 文件（也就是我们的<strong>电子书素材</strong>）放到项目中，然后在<code>SUMMARY.md</code>文件中配置电子书的目录（因为发现这一部分比我写得好，以下部分内容转载自知乎 https://zhuanlan.zhihu.com/p/245763905 ）</p>
+<p>比如说， 我的项目中有下面这些文件：<br>
+<img src="https://blog.rzly.net/post-images/1710637045736.png" alt="" loading="lazy"></p>
+<p>那么，我在<code>SUMMARY.md</code>文件中就要这样配置：</p>
+<pre><code># 目录
+* [README](./README.md)
+* [00-前端工具](00-前端工具/0-README.md)
+  * [01-VS Code的使用](00-前端工具/01-VS Code的使用.md)
+  * [02-Git的使用](00-前端工具/02-Git的使用.md)
+* [01-HTML](01-HTML/0-README.md)
+  * [01-认识Web和Web标准](01-HTML/01-认识Web和Web标准.md)
+  * [02-浏览器的介绍](01-HTML/02-浏览器的介绍.md)
+  * [03-初识HTML](01-HTML/03-初识HTML.md)
+* [02-CSS基础](02-CSS基础/0-README.md)
+  * [01-CSS属性：字体属性和文本属性](02-CSS基础/01-CSS属性：字体属性和文本属性.md)
+  * [02-CSS属性：背景属性](02-CSS基础/02-CSS属性：背景属性.md)
+  * [03-CSS样式表和选择器](02-CSS基础/03-CSS样式表和选择器.md)
+* [03-JavaScript基础](03-JavaScript基础/0-README.md)
+  * [00-编程语言](03-JavaScript基础/00-编程语言.md)
+  * [01-JS简介](03-JavaScript基础/01-JS简介.md)
+  * [02-变量](03-JavaScript基础/02-变量.md)
+  * [03-变量的数据类型：基本数据类型和引用数据类型](03-JavaScript基础/03-变量的数据类型：基本数据类型和引用数据类型.md)
+</code></pre>
+<p>制作成的目录，将会是下面这种效果：<br>
+<img src="https://blog.rzly.net/post-images/1710637120607.png" alt="" loading="lazy"></p>
+<h1 id="导出电子书">导出电子书</h1>
+<br>
+<h2 id="本地预览">本地预览</h2>
+<pre><code>gitbook serve
+</code></pre>
+<p>执行上方命令后，工具会对项目里的 Markdown 格式的文件进行转换，默认转换为 html 格式，最后提示 <code>Serving book on http://localhost:4000</code>。</p>
+<p>我们打开浏览器输入<code>http://localhost:4000</code>，预览一下电子书的效果：</p>
+<figure data-type="image" tabindex="1"><img src="https://blog.rzly.net/post-images/1710637235622.png" alt="" loading="lazy"></figure>
+<h2 id="制作并导出电子书">制作并导出电子书</h2>
+<p>生成 PDF 格式的电子书：（PDF 是最常见的文档格式）</p>
+<pre><code class="language-bash">gitbook pdf ./ ./mybook.pdf
+</code></pre>
+<p>生成 epub 格式的电子书：（epub 是最常见、最通用的电子书格式）</p>
+<pre><code class="language-bash">gitbook epub ./ ./mybook.epub
+</code></pre>
+<p>生成 mobi 格式的电子书：（mobi 格式可以在 kindle 中打开）</p>
+<pre><code class="language-bash">gitbook mobi ./ ./mybook.mobi
+</code></pre>
+<p>上面这三种格式的电子书生成之后，项目里会看到这三个新增的文件</p>
+<h2 id="高级配置">高级配置</h2>
+<br>
+<h3 id="制作书籍封面">制作书籍封面</h3>
+<p>为了让书籍显示得更加优雅，我们可以指定一个自定义的封面。操作如下：</p>
+<p>在项目的根目录下准备好 <code>cover.jpg</code> （大封面）和 <code>cover_small.jpg</code> （小封面）这两种封面图片。注意，图片的文件名和后缀名必须严格按照这句话来。</p>
+<p>GitBook 的官方文档建议： <code>cover.jpg</code> （大封面）的尺寸为 1800x2360 像素，<code>cover_small.jpg</code>（小封面）的尺寸为 200x262 像素。图片的制作，建议遵循如下规范：</p>
+<ul>
+<li>没有边框</li>
+<li>清晰可见的书本标题</li>
+<li>任何重要的文字在小封面中应该清晰可见</li>
+</ul>
+<h3 id="bookjson-电子书的各种配置">book.json ：电子书的各种配置</h3>
+<p>我们可以在项目的根目录下新建一个文件<code>book.json</code>，这个<code>book.json</code>就是电子书的配置文件，可以在里面填一些常见的配置。</p>
+<p>1、<strong>常规配置</strong>如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">变量</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">root</td>
+<td style="text-align:left">包含所有图书文件的根文件夹的路径，除了 book.json</td>
+</tr>
+<tr>
+<td style="text-align:left">structure</td>
+<td style="text-align:left">指定自述文件，摘要，词汇表等的路径</td>
+</tr>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left">您的书名，默认值是从 README 中提取出来的。在 GitBook.com 上，这个字段是预填的。</td>
+</tr>
+<tr>
+<td style="text-align:left">description</td>
+<td style="text-align:left">您的书籍的描述，默认值是从 README 中提取出来的。在 GitBook.com 上，这个字段是预填的。</td>
+</tr>
+<tr>
+<td style="text-align:left">author</td>
+<td style="text-align:left">作者名。在GitBook.com上，这个字段是预填的。</td>
+</tr>
+<tr>
+<td style="text-align:left">isbn</td>
+<td style="text-align:left">国际标准书号 ISBN</td>
+</tr>
+<tr>
+<td style="text-align:left">language</td>
+<td style="text-align:left">本书的语言类型 —— ISO code 。默认值是 en</td>
+</tr>
+<tr>
+<td style="text-align:left">direction</td>
+<td style="text-align:left">文本阅读顺序。可以是 rtl （从右向左）或 ltr （从左向右），默认值依赖于 language 的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">gitbook</td>
+<td style="text-align:left">应该使用的GitBook版本，并接受类似于 &gt;=3.0.0 的条件。</td>
+</tr>
+<tr>
+<td style="text-align:left">links</td>
+<td style="text-align:left">在左侧导航栏添加链接信息</td>
+</tr>
+<tr>
+<td style="text-align:left">plugins</td>
+<td style="text-align:left">要加载的插件列表(官网插件列表)</td>
+</tr>
+<tr>
+<td style="text-align:left">pluginsConfig</td>
+<td style="text-align:left">插件的配置</td>
+</tr>
+</tbody>
+</table>
+<p>示例：配置 book.json 的示例如下：</p>
+<pre><code class="language-json">{
+    &quot;title&quot;: &quot;前端入门和进阶图文教程&quot;,
+    &quot;description&quot;: &quot;前端入门到进阶图文教程，超详细的Web前端学习笔记。从零开始学前端，做一名精致优雅的前端工程师。公众号「千古壹号」作者。&quot;,
+    &quot;author&quot;: &quot;千古壹号&quot;,
+    &quot;language&quot;: &quot;zh-hans&quot;,
+    &quot;gitbook&quot;: &quot;3.2.3&quot;,
+}
+</code></pre>
+<p>2、<strong>pdf</strong> 的配置如下：（使用 <code>book.json</code> 中的一组选项来定制 PDF 输出）</p>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pdf.pageNumbers</td>
+<td>将页码添加到每个页面的底部（默认为 true）</td>
+</tr>
+<tr>
+<td>pdf.fontSize</td>
+<td>基本字体大小（默认是 12）</td>
+</tr>
+<tr>
+<td>pdf.fontFamily</td>
+<td>基本字体样式（默认是 Arial）</td>
+</tr>
+<tr>
+<td>pdf.paperSize</td>
+<td>页面尺寸，选项有： a0、a1、 a2、 a3、a4、a5、a6、b0、b1、b2、b3、b4、b5、b6、legal、letter （默认值是 a4）</td>
+</tr>
+<tr>
+<td>pdf.margin.top</td>
+<td>上边距（默认值是 56）</td>
+</tr>
+<tr>
+<td>pdf.margin.bottom</td>
+<td>下边距（默认值是 56）</td>
+</tr>
+<tr>
+<td>pdf.margin.left</td>
+<td>左边距（默认值是 62）</td>
+</tr>
+<tr>
+<td>pdf.margin.right</td>
+<td>右边距（默认值是 62）</td>
+</tr>
+</tbody>
+</table>
+<p>定制 PDF 文档输出格式的示例代码如下：</p>
+<pre><code class="language-json">{
+    &quot;pdf&quot;: {
+        &quot;pageNumbers&quot;: false,
+        &quot;fontSize&quot;: 12,
+        &quot;paperSize&quot;: &quot;a4&quot;,
+        &quot;margin&quot;: {
+            &quot;top&quot;: 36,
+            &quot;bottom&quot;: 36,
+            &quot;left&quot;: 62,
+            &quot;right&quot;: 62
+        }
+    }
+}
+</code></pre>
+<p>备注：如果你不需要对输出的 pdf 做任何特定的配置，则不需要添加上面的内容，让 pdf 的输出格式保持默认就好。</p>
+<p>3、<strong>plugins</strong> 插件：</p>
+<p>默认插件：</p>
+<ul>
+<li>highlight - 语法高亮插件</li>
+<li>search - 搜索插件</li>
+<li>sharing - 分享插件</li>
+<li>font-settings - 字体设置插件</li>
+<li>livereload - 热加载插件</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://blog.rzly.net/post-images/1710637982340.png" alt="" loading="lazy"></figure>
+<p>由于制作电子书不需要插件，如果有网页搭建等需求，可以查看 https://blog.csdn.net/gongch0604/article/details/107494736</p>
+<h3 id="自动生成目录重要">自动生成目录（重要）</h3>
+<p>如果你的电子书素材里有很多 markdown 文件，那么，如何将多个 markdown 文件的文件名，在<code>SUMMARY.md</code>里快速生成对应的目录？</p>
+<p>难道要一个一个地手动 copy 吗？这不可能。</p>
+<p>说白了，这个需求就是：<strong>如何自动生成电子书的目录</strong>？改变世界的程序员用「脚本」就能搞定，一键执行。</p>
+<p>网上有很多好用的脚本，我给你推荐一个亲测好用的脚本：</p>
+<blockquote>
+<p>GitBook 自动生成目录的脚本：https://github.com/fushenghua/gitbook-plugin-summary</p>
+</blockquote>
+<p>操作方法很简单，把上面这个链接中的项目下载下来，进入到这个项目的目录，执行 <code>$ python gitbook-plugin-summary.py dirPath</code> 即可自动生成电子书的目录，亲测有效。备注：这里的<code>dirPath</code>指的是你的电子书目录的绝对路径。</p>
+<p>对了，在执行上面这个脚本之前，记得先安装 <code>Python</code> 环境。</p>
+<h1 id="电子书修正">电子书修正</h1>
+<p>经过测试只有epub的目录可以正常运转，因此我们可能需要使用<strong>Calibre</strong>再次编辑电子书。将EPUB文件拖入Calibre或者直接用<strong>Edit E-book</strong>打开，编辑书籍。</p>
+<p>删除左侧杂项中可以删除的项目，这些项目将导致文章重复，并且目录构建在上面，让电子书的目录乱跳。</p>
+<p>删除所有目录，然后点击更具大标题构建，如果出现带#xxx的重复项，删除即可</p>
+<figure data-type="image" tabindex="3"><img src="https://blog.rzly.net/post-images/1710638247218.png" alt="" loading="lazy"></figure>
+<p>随后将目录嵌入书籍，会在左侧多出来一个<code>toc.xhtml</code>目录文件</p>
+<figure data-type="image" tabindex="4"><img src="https://blog.rzly.net/post-images/1710638292134.png" alt="" loading="lazy"></figure>
+<p>这个时候就可以删除<code>SUMMARY.html</code>文件了，使用<code>toc.xhtml</code>目录文件，将其中指向目录的标签也改为<code>toc.xhtml</code></p>
+<figure data-type="image" tabindex="5"><img src="https://blog.rzly.net/post-images/1710638416754.png" alt="" loading="lazy"></figure>
+<h1 id="电子书其他格式制作导出">电子书其他格式制作导出</h1>
+<p>将书籍导入Calibre（如果之前是导入编辑就不需要这样做）</p>
+<figure data-type="image" tabindex="6"><img src="https://blog.rzly.net/post-images/1710638488080.png" alt="" loading="lazy"></figure>
+<p>点击转换书籍，在右上角选择转换格式</p>
+<figure data-type="image" tabindex="7"><img src="https://blog.rzly.net/post-images/1710638526906.png" alt="" loading="lazy"></figure>
+<p>由于我们已经制作好目录，我们需要关闭目录导出选项</p>
+<p><img src="https://blog.rzly.net/post-images/1710638579821.png" alt="" loading="lazy"><br>
+<img src="https://blog.rzly.net/post-images/1710638583585.png" alt="" loading="lazy"></p>
+<p>确定导出即可</p>
+<h1 id="保存最后的电子书">保存最后的电子书</h1>
+<figure data-type="image" tabindex="8"><img src="https://blog.rzly.net/post-images/1710638621891.png" alt="" loading="lazy"></figure>
+<p>将最后导出的电子书保存到硬盘即可</p>
+<figure data-type="image" tabindex="9"><img src="https://blog.rzly.net/post-images/1710638650941.png" alt="" loading="lazy"></figure>
+<p>😋大功告成！最终作品可以参考如下文件 https://github.com/iuu6/EnglishGrammarBook/tree/master/Output</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.rzly.net/post/reg_disable_delete_devices/" class="post-title gt-a-link">
+                    隐藏Windows「安全删除硬件」里的USB/其他设备
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">From the root, begin anew. </div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/iuu6" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Made by <a href="https://github.com/iuu6" target="_blank">IUU6</a> with heart ❤️~
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://blog.rzly.net/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

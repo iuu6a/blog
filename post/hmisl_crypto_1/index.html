@@ -1,0 +1,757 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>「回中网安」3：密码学——古典密码学 | IUU6&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.rzly.net/favicon.ico?v=1729921848626">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.rzly.net/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            IUU6&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            Home
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            Archives
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            Tags
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            About
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/friends" class="menu gt-a-link">
+                            Friends
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1729921848626" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    「回中网安」3：密码学——古典密码学
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-05-27 ·
+                    </time>
+                    
+                        <a href="https://blog.rzly.net/tag/hui-zhong-wang-an/" class="post-tags">
+                            # 回中网安
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="密码学-古典密码学">密码学-古典密码学</h1>
+<blockquote>
+<p>古典密码学分为<strong>替代</strong>和<strong>置换</strong>两大类</p>
+</blockquote>
+<h2 id="键盘密码">键盘密码</h2>
+<blockquote>
+<p>运用键盘的布局等进行加密，位移等</p>
+</blockquote>
+<p><strong>布局形状</strong></p>
+<p>Tips：看键盘！</p>
+<p><code>tgvhn uygbnjm uygbn yhnijm</code></p>
+<p>flag：<code>hack</code></p>
+<p><strong>坐标加密</strong></p>
+<p><code>35 16 13</code></p>
+<p>flag：<code>bye</code></p>
+<p><em>这个我个人觉得脑洞有点大，基本<strong>不会</strong>出现，所以只展示两个给大家看看</em></p>
+<h2 id="凯撒密码">凯撒密码</h2>
+<blockquote>
+<p>这是一种简单的位移密码，最标准的凯撒密码是<strong>位移3</strong>位</p>
+</blockquote>
+<p><strong>示例密文</strong>：<code>eucmugcgu</code></p>
+<p><strong>flag</strong>：<code>kaisamima</code></p>
+<p><strong>只需要理解原理，可以使用解密工具进行解密即可</strong></p>
+<p>使用<strong>夺旗工具</strong>里面的<strong>CTF Crack</strong>！</p>
+<h3 id="rot13密码凯撒密码的变体">ROT13密码——凯撒密码的变体</h3>
+<blockquote>
+<p>和凯撒密码一样进行位移，但是一定是<strong>十三</strong>位</p>
+</blockquote>
+<p><strong>示例密文</strong>：<code>URYYB</code></p>
+<p><strong>flag</strong>：<code>HELLO</code></p>
+<p><strong>只需要理解原理，可以使用解密工具进行解密即可</strong></p>
+<p>使用<strong>夺旗工具</strong>里面的<strong>CTF Crack</strong>！</p>
+<blockquote>
+<p>还有其他变体可能使用<strong>ASCII码</strong>进行变换迭代</p>
+</blockquote>
+<h2 id="频率密码">频率密码</h2>
+<blockquote>
+<p><strong>频率密码</strong>是根据单个字母出现的频率，对密码进行替换加密的方法</p>
+<p>研究字母或者字母组合在文本中出现的频率。<strong>无论在何种自然语言体系当中，不同的文字单位都有其特定的出现频率，这个特征一般表现在长篇幅、有意义的文字序列中</strong>。以英文为例，出现频率最高的字母是e，其次是t、a、o…..</p>
+</blockquote>
+<p><strong>示例密文</strong>：</p>
+<pre><code>Lw!
+
+Gyzvecy ke WvyVKT!
+
+W'zz by reso dsbdkwksky tzjq teo kly ujr. Teo keujr, gy joy dksurwmq bjdwv vorakeqojalr jmu wkd jaazwvjkwemd. Vorakeqojalr ljd j zemq lwdkeor, jzklesql gwkl kly juxymk et vecaskyod wk ljd qekkym oyjzzr vecazwvjkyu. Decy dwcazy ezu vwalyod joy kly Vjydjo vwalyo, kly Xwqymyoy vwalyo, kly dsbdkwkskwem vwalyo, glwvl wd klwd emy, jmu de em. Jzcedk jzz et klydy vwalyod joy yjdwzr boeiym keujr gwkl kly lyza et vecaskyod. Decy myg ymvorakwem cykleud joy JYD, kly vsooymk dkjmujou teo ymvorakwem, jzemq gwkl ODJ. Vorakeqojalr wd j xjdk twyzu jmu wd xyor wmkyoydkwmq klesql. De iwvi bjvi, oyju sa em decy veez vwalyod jmu ljxy tsm!
+
+El jmu teo reso oyveoud cr mjcy wd WvyVKT{jzgjrd_zwdkym_ke_reso_dsbdkwksky_tzjqd}.
+</code></pre>
+<p><strong>实用工具</strong>：https://www.quipqiup.com/</p>
+<p><strong>flag</strong>：<code>IceCTF{always_listen_to_your_substitute_flags}</code></p>
+<h2 id="摩斯电码">摩斯电码</h2>
+<blockquote>
+<p>这是一种替换密码，看到题目后会辨认，然后知道如何解密即可</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://blog.rzly.net/post-images/1716785254699.png" alt="" loading="lazy"></figure>
+<p>解密可以使用<strong>夺旗工具</strong>里面的<strong>CTF Crack</strong>！</p>
+<p><strong>示例密文</strong>：<code>-- --- ... .. -.. .. .- -. -- .- </code></p>
+<p><strong>flag</strong>：<code>mosidianma</code></p>
+<h2 id="brainfk和ook密码">BrainF**k和Ook密码</h2>
+<blockquote>
+<p>主要是对<strong>程序源代码</strong>进行加密，把一些指令<strong>替换</strong>为其他符号</p>
+</blockquote>
+<p><strong>BrainF</strong>**<strong>k</strong><br>
+<code>+++++ +++[- &gt;++++ ++++&lt; ]&gt;+++ +++++ .++++ +.--- -.&lt;++ +[-&gt;+ ++&lt;]&gt; +.--- ----. &lt;</code></p>
+<p><strong>Ook示例</strong><br>
+<code>Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook. Ook? Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook! Ook? Ook! Ook! Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook? Ook. Ook? Ook! Ook. Ook? Ook. Ook. Ook! Ook. Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook! Ook. Ook? Ook. </code></p>
+<p><strong>Short Ook</strong><br>
+<code>..... ..... ..... .!?!! .?... ..... ..... ...?. ?!.?. ..... ..... ..... !.... ..... ..!.! !!!!! !!!.? ..... ..!?! !.?.. ....? .?!.? ..!.! !!!!! !!!!! !!!!. ?.</code></p>
+<p><strong>flag</strong>：<code>HMISL</code></p>
+<p><strong>只需要知道这两个加密方式长什么样就行啦！然后使用解密工具即可</strong></p>
+<p>例如使用工具：https://ctf.bugku.com/tool/brainfuck</p>
+<h2 id="培根密码">培根密码</h2>
+<blockquote>
+<p>一种简单的替换密码，密文只有两个字母组成，由五个字母来表达一个字母</p>
+<p>例如h被替换为aabbb，因此，看到只有两个字母组成的密文，那么大概率是培根密码</p>
+</blockquote>
+<p><strong>示例密文</strong>：<code>aabbbaabaaababbababbabbbaaaaaababbaaaaaa</code></p>
+<p><strong>flag</strong>：<code>helloawa</code></p>
+<p><strong>常规培根密码表</strong>：<code>i</code>和<code>j</code>、<code>u</code>和<code>v</code>对应密文相同</p>
+<figure data-type="image" tabindex="2"><img src="https://blog.rzly.net/post-images/1716785271858.png" alt="" loading="lazy"></figure>
+<p><strong>扩展培根密码表</strong>：包括了<strong>26个</strong>字母</p>
+<figure data-type="image" tabindex="3"><img src="https://blog.rzly.net/post-images/1716785280775.png" alt="" loading="lazy"></figure>
+<h3 id="扩展使用">扩展使用</h3>
+<p><em>那么既然我们可以把任意字符串转化为<strong>ab两种形式</strong>，那么我们也可以用<strong>ab</strong>来表示<strong>大写小写等</strong></em></p>
+<p>比如说<code>iloveuctfailoveuctfailoveuctfailoveuctfa</code></p>
+<p>通过<strong>a表示大写</strong>，<strong>b表示小写</strong>的加密，例如<code>aabbbaabaaababbababbabbbaaaaaababbaaaaaa</code></p>
+<p>就可以变化为<code>ILoveUCtFAIlOveUcTfaIlovEUCTFAiLovEUCTFA</code></p>
+<p>那么用这段东西来表示培根密码的ab</p>
+<p>这是一段示例的加密程序</p>
+<pre><code class="language-go">package main
+
+import (
+    &quot;fmt&quot;
+    &quot;strings&quot;
+)
+
+func main() {
+    pattern := &quot;aabbbaabaaababbababbabbbaaaaaababbaaaaaa&quot;
+    text := &quot;iloveuctfailoveuctfailoveuctfailoveuctfa&quot;
+    var result strings.Builder
+
+    for i, char := range text {
+        if pattern[i] == 'a' {
+            result.WriteRune(rune(strings.ToUpper(string(char))[0]))
+        } else if pattern[i] == 'b' {
+            result.WriteRune(rune(strings.ToLower(string(char))[0]))
+        }
+    }
+
+    fmt.Println(result.String())
+}
+</code></pre>
+<p>推荐解密网站：https://rumkin.com/tools/cipher/baconian/</p>
+<p>也可以使用本地解密工具</p>
+<h2 id="仿射密码">仿射密码</h2>
+<blockquote>
+<p><strong>仿射密码</strong>为单表加密的一种，字母系统中所有字母都藉一简单数学方程加密，对应至数值，或转回字母。它是一种替换密码，利用加密函数一个字母对一个字母的加密</p>
+</blockquote>
+<p>加密函数是 <strong>E(x)= (ax + b) (mod m)</strong>，其中，a和m互质，m是字符集的大小。<br>
+<em>（例如，26即是以26个字母作为编码，当m是26时，a必须是1，3，5，7，9，11，15，17，19，21，23，25其中之一）</em></p>
+<p><strong>对应密码表</strong>：</p>
+<figure data-type="image" tabindex="4"><img src="https://blog.rzly.net/post-images/1716785295554.png" alt="" loading="lazy"></figure>
+<p><strong>例题</strong></p>
+<p>假设密钥<code>K= (7,3)</code> 使用仿射密码体制加密单词hot并对得到的密文进行解密。</p>
+<p><strong>加密</strong></p>
+<p>加密函数： <code>E(x)= (7x + 3) (mod 26)</code><br>
+根据上面英文字母编码表得到X</p>
+<figure data-type="image" tabindex="5"><img src="https://blog.rzly.net/post-images/1716785335498.png" alt="" loading="lazy"></figure>
+<p><strong>解密</strong></p>
+<p><strong>求乘法逆元的方法</strong></p>
+<pre><code class="language-python">def extended_gcd(a, b):
+    &quot;&quot;&quot;
+    扩展欧几里得算法
+    返回整数 x 和 y，使得 ax + by = gcd(a, b)
+    &quot;&quot;&quot;
+    if a == 0:
+        return b, 0, 1
+    gcd, x1, y1 = extended_gcd(b % a, a)
+    x = y1 - (b // a) * x1
+    y = x1
+    return gcd, x, y
+
+def mod_inverse(a, m):
+    &quot;&quot;&quot;
+    计算 a 在模 m 下的乘法逆元
+    &quot;&quot;&quot;
+    gcd, x, _ = extended_gcd(a, m)
+    if gcd != 1:
+        raise ValueError(f&quot;{a} 和 {m} 不是互质，逆元不存在。&quot;)
+    else:
+        return x % m
+
+# 示例
+a = 7
+m = 26
+
+inverse = mod_inverse(a, m)
+print(f&quot;{a} 在模 {m} 下的乘法逆元是: {inverse}&quot;)
+</code></pre>
+<p><strong>解密函数</strong><br>
+求得a的乘法逆元为15<br>
+D(x) = 15(x - 3) (mod 26)</p>
+<figure data-type="image" tabindex="6"><img src="https://blog.rzly.net/post-images/1716785347749.png" alt="" loading="lazy"></figure>
+<pre><code class="language-python">def extended_gcd(a, b):
+    &quot;&quot;&quot;
+    扩展欧几里得算法
+    返回整数 x 和 y，使得 ax + by = gcd(a, b)
+    &quot;&quot;&quot;
+    if a == 0:
+        return b, 0, 1
+    gcd, x1, y1 = extended_gcd(b % a, a)
+    x = y1 - (b // a) * x1
+    y = x1
+    return gcd, x, y
+
+def mod_inverse(a, m):
+    &quot;&quot;&quot;
+    计算 a 在模 m 下的乘法逆元
+    &quot;&quot;&quot;
+    gcd, x, _ = extended_gcd(a, m)
+    if gcd != 1:
+        raise ValueError(f&quot;{a} 和 {m} 不是互质，逆元不存在。&quot;)
+    else:
+        return x % m
+
+def affine_decrypt(ciphertext, a, b, m):
+    &quot;&quot;&quot;
+    解密仿射密码
+    &quot;&quot;&quot;
+    # 求乘法逆元
+    inv_a = mod_inverse(a, m)
+    
+    plaintext = &quot;&quot;
+    for char in ciphertext:
+        if char.isalpha():
+            y = ord(char) - ord('A')
+            x = inv_a * (y - b) % m
+            plaintext += chr(x + ord('A'))
+        else:
+            plaintext += char
+    return plaintext
+
+# 示例
+a = 7
+b = 3
+m = 26
+ciphertext = &quot;axg&quot;.upper()
+
+plaintext = affine_decrypt(ciphertext, a, b, m)
+print(&quot;解密后文本:&quot;, plaintext)
+</code></pre>
+<p>加解密工具：http://www.hiencode.com/affine.html</p>
+<h2 id="猪圈密码">猪圈密码</h2>
+<blockquote>
+<p>替换式密码，非常简单</p>
+</blockquote>
+<figure data-type="image" tabindex="7"><img src="https://blog.rzly.net/post-images/1716785359317.png" alt="" loading="lazy"></figure>
+<p>各种密码变通：https://blog.csdn.net/weixin_47869330/article/details/111396033</p>
+<h2 id="维吉尼亚密码">维吉尼亚密码</h2>
+<figure data-type="image" tabindex="8"><img src="https://blog.rzly.net/post-images/1716785374432.png" alt="" loading="lazy"></figure>
+<p><strong>明文</strong>：<code>I love you</code></p>
+<p><strong>密钥</strong>：<code>abc</code></p>
+<p><strong>密文</strong>：<code>I mqvf aov</code></p>
+<p><strong>注意</strong>：<strong>重复</strong>使用密钥进行加密，推荐解密工具：https://www.qqxiuzi.cn/bianma/weijiniyamima.php</p>
+<h2 id="栅栏密码">栅栏密码</h2>
+<blockquote>
+<p>栅栏密码（Rail Fence Cipher）是一种<strong>置换</strong>密码，它将明文按照一定规则写入<strong>多个栅栏</strong>中，然后将栅栏中的字符逐行读取以加密消息。例如，使用3个栅栏（3行）的栅栏密码将明文<code>Welcome to HMISL!!</code>写成如下形式：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>W</td>
+<td>c</td>
+<td>e</td>
+<td>H</td>
+<td>S</td>
+<td>!</td>
+</tr>
+<tr>
+<td>2</td>
+<td>e</td>
+<td>o</td>
+<td>t</td>
+<td>M</td>
+<td>L</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>l</td>
+<td>m</td>
+<td>o</td>
+<td>I</td>
+<td>!</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>得到密文：<code>WooSecmtHIL!leM!</code></p>
+<p>在线工具：https://ctf.bugku.com/tool/railfence</p>
+<h2 id="费纳姆密码">费纳姆密码</h2>
+<blockquote>
+<p>二战德军使用的密码，属于<strong>二进制运算</strong>密码</p>
+</blockquote>
+<p><strong>明文</strong>：<br>
+HELLO=1001000 1000101 1001100 1001100 1001111<br>
+<strong>密钥</strong>：<br>
+CRUDE=1000011 1010010 1010101 1000100 1000101<br>
+<strong>异或运算</strong>：<br>
+密文：0001011 0010111 0011001 0001000 0001010</p>
+<p>解算脚本，顺便了解GitHub的使用：https://github.com/0neOfU4/fenhum-decode</p>
+<h2 id="杰斐逊转轮加密">杰斐逊转轮加密</h2>
+<blockquote>
+<p>杰斐逊转轮加密器，这个装置由<strong>36</strong>片同样大小的木制转轮，套在一根杆上。每片转轮的圆周边缘上可<strong>有乱序</strong>的<strong>26个</strong>英文字母表</p>
+</blockquote>
+<figure data-type="image" tabindex="9"><img src="https://blog.rzly.net/post-images/1716785389509.png" alt="" loading="lazy"></figure>
+<p>通信双方必须各自拥有一套完全一样的转轮加密器。</p>
+<p><strong>加密方</strong>转动加密器上的转轮，是明文（不超过36字）正好出现在同一行上，这时转轮排列的其他25行都是无意义的乱码，把其中任意一行的乱码抄写来，得到密文。<br>
+<strong>接收方</strong>收到密文，转动加密器上的转轮，使得密文正好出现在同一行上，然后查看其他25行的内容，有意义的行就是明文。<br>
+杰斐逊加密器属于典型的“多表替换”加密（每一个转轮就相当于一个替换的字母表），他很难破解，除非能得到通信双方所使用的加密装置。</p>
+<p><strong>加密示例</strong>：</p>
+<pre><code>1： &lt;ZWAXJGDLUBVIQHKYPNTCRMOSFE &lt;
+2： &lt;KPBELNACZDTRXMJQOYHGVSFUWI &lt;
+3： &lt;BDMAIZVRNSJUWFHTEQGYXPLOCK &lt;
+4： &lt;RPLNDVHGFCUKTEBSXQYIZMJWAO &lt;
+5： &lt;IHFRLABEUOTSGJVDKCPMNZQWXY &lt;
+6： &lt;AMKGHIWPNYCJBFZDRUSLOQXVET &lt;
+7： &lt;GWTHSPYBXIZULVKMRAFDCEONJQ &lt;
+8： &lt;NOZUTWDCVRJLXKISEFAPMYGHBQ &lt;
+9： &lt;QWATDSRFHENYVUBMCOIKZGJXPL &lt;
+10： &lt;WABMCXPLTDSRJQZGOIKFHENYVU &lt;
+11： &lt;XPLTDAOIKFZGHENYSRUBMCQWVJ &lt;
+12： &lt;TDSWAYXPLVUBOIKZGJRFHENMCQ &lt;
+13： &lt;BMCSRFHLTDENQWAOXPYVUIKZGJ &lt;
+14： &lt;XPHKZGJTDSENYVUBMLAOIRFCQW &lt;
+
+密钥：2,5,1,3,6,4,9,7,8,14,10,13,11,12
+密文：HCBTSXWCRQGLES
+</code></pre>
+<p><strong>具体的过程</strong></p>
+<p>先按密钥行排列</p>
+<pre><code>2： &lt;KPBELNACZDTRXMJQOYHGVSFUWI &lt;
+5： &lt;IHFRLABEUOTSGJVDKCPMNZQWXY &lt;
+1： &lt;ZWAXJGDLUBVIQHKYPNTCRMOSFE &lt;
+3： &lt;BDMAIZVRNSJUWFHTEQGYXPLOCK &lt;
+6： &lt;AMKGHIWPNYCJBFZDRUSLOQXVET &lt;
+4： &lt;RPLNDVHGFCUKTEBSXQYIZMJWAO &lt;
+9： &lt;QWATDSRFHENYVUBMCOIKZGJXPL &lt;
+7： &lt;GWTHSPYBXIZULVKMRAFDCEONJQ &lt;
+8： &lt;NOZUTWDCVRJLXKISEFAPMYGHBQ &lt;
+14：&lt;XPHKZGJTDSENYVUBMLAOIRFCQW &lt;
+10：&lt;WABMCXPLTDSRJQZGOIKFHENYVU &lt;
+13：&lt;BMCSRFHLTDENQWAOXPYVUIKZGJ &lt;
+11：&lt;XPLTDAOIKFZGHENYSRUBMCQWVJ &lt;
+12：&lt;TDSWAYXPLVUBOIKZGJRFHENMCQ &lt;
+</code></pre>
+<p>再按密文调整每行顺序</p>
+<pre><code>2： &lt;HGVSFUWIKPBELNACZDTRXMJQOY&lt;
+5： &lt;CPMNZQWXYIHFRLABEUOTSGJVDK&lt;
+1： &lt;BVIQHKYPNTCRMOSFEZWAXJGDLU&lt;
+3： &lt;TEQGYXPLOCKBDMAIZVRNSJUWFH&lt;
+6： &lt;SLOQXVETAMKGHIWPNYCJBFZDRU&lt;
+4： &lt;XQYIZMJWAORPLNDVHGFCUKTEBS&lt;
+9： &lt;WATDSRFHENYVUBMCOIKZGJXPLQ&lt;
+7： &lt;CEONJQGWTHSPYBXIZULVKMRAFD&lt;
+8： &lt;RJLXKISEFAPMYGHBQNOZUTWDCV&lt;
+14：&lt;QWXPHKZGJTDSENYVUBMLAOIRFC&lt;
+10：&lt;GOIKFHENYVUWABMCXPLTDSRJQZ&lt;
+13：&lt;LTDENQWAOXPYVUIKZGJBMCSRFH&lt;
+11：&lt;ENYSRUBMCQWVJXPLTDAOIKFZGH&lt;
+12：&lt;SWAYXPLVUBOIKZGJRFHENMCQTD&lt;
+</code></pre>
+<p><strong>flag</strong>：XSXSBUGKUADMIN</p>
+<p><strong>解密代码</strong></p>
+<pre><code class="language-python">#秘钥
+key=&quot;2,5,1,3,6,4,9,7,8,14,10,13,11,12&quot;
+#密文
+cipher_text = &quot;HCBTSXWCRQGLES&quot;
+  
+  
+f = open(&quot;zhuanlun.txt&quot;)
+str_first_encry = []
+  
+  
+for line in f:
+    line = line.strip()
+    str_first_encry.append(line)
+  
+  
+key_index = key.split(&quot;,&quot;)
+str_second_encry=[]
+for k in key_index:
+    str_second_encry.append(str_first_encry[int(k)-1])
+    print(str_first_encry[int(k)-1])
+  
+  
+for i,ch in enumerate(cipher_text):
+    line = str_second_encry[i]
+    split_index = line.index(ch)
+    temp=[]
+    temp[0:len(line)-split_index+1] = line[split_index:len(line)]
+    temp[len(temp):] = line[0:split_index]
+    str_second_encry[i] = &quot;&quot;.join(temp)
+print(&quot;-------------------------------------&quot;)
+for plain in str_second_encry:
+    print(plain)
+</code></pre>
+<p><strong>zhuanlun.txt</strong></p>
+<pre><code>ZWAXJGDLUBVIQHKYPNTCRMOSFE
+KPBELNACZDTRXMJQOYHGVSFUWI
+BDMAIZVRNSJUWFHTEQGYXPLOCK
+RPLNDVHGFCUKTEBSXQYIZMJWAO
+IHFRLABEUOTSGJVDKCPMNZQWXY
+AMKGHIWPNYCJBFZDRUSLOQXVET
+GWTHSPYBXIZULVKMRAFDCEONJQ
+NOZUTWDCVRJLXKISEFAPMYGHBQ
+QWATDSRFHENYVUBMCOIKZGJXPL
+0WABMCXPLTDSRJQZGOIKFHENYVU
+XPLTDAOIKFZGHENYSRUBMCQWVJ
+TDSWAYXPLVUBOIKZGJRFHENMCQ
+BMCSRFHLTDENQWAOXPYVUIKZGJ
+XPHKZGJTDSENYVUBMLAOIRFCQW
+</code></pre>
+<figure data-type="image" tabindex="10"><img src="https://blog.rzly.net/post-images/1716785415651.png" alt="" loading="lazy"></figure>
+<h2 id="棋盘密码">棋盘密码</h2>
+<p>棋盘密码（Polybius）棋盘密码是一种查表加密法，密码表如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+</tr>
+<tr>
+<td>2</td>
+<td>f</td>
+<td>g</td>
+<td>h</td>
+<td>i,j</td>
+<td>k</td>
+</tr>
+<tr>
+<td>3</td>
+<td>l</td>
+<td>m</td>
+<td>n</td>
+<td>o</td>
+<td>p</td>
+</tr>
+<tr>
+<td>4</td>
+<td>q</td>
+<td>r</td>
+<td>s</td>
+<td>t</td>
+<td>u</td>
+</tr>
+<tr>
+<td>5</td>
+<td>v</td>
+<td>w</td>
+<td>x</td>
+<td>y</td>
+<td>z</td>
+</tr>
+</tbody>
+</table>
+<p>密文就是字符在密码表里面对应的横纵坐标，如&quot;a&quot;加密为&quot;11&quot;, “y&quot;加密为&quot;54”</p>
+<pre><code>Welcome to pangolin lab!
+=&gt;Polybius=&gt;
+52153113343215 4434 3511332234312433 311112!
+</code></pre>
+<h2 id="adfgxadfgvx密码">ADFGX/ADFGVX密码</h2>
+<blockquote>
+<p>ADFGX/ADFGVX密码与棋盘密码原理相似，只是将行号和列号换成了ADFGX/ADFGVX字母，且<strong>表格内的字母顺序可以人为确定</strong>，ADFGVX密码比ADFGX新增了数字。下面是两个可能的密码表：</p>
+</blockquote>
+<p>ADFGX:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>D</th>
+<th>F</th>
+<th>G</th>
+<th>X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>P</td>
+<td>H</td>
+<td>Q</td>
+<td>G</td>
+<td>M</td>
+</tr>
+<tr>
+<td>D</td>
+<td>E</td>
+<td>A</td>
+<td>Y</td>
+<td>N</td>
+<td>O</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>L</td>
+<td>R</td>
+<td>C</td>
+<td>B</td>
+</tr>
+<tr>
+<td>G</td>
+<td>D</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+</tr>
+<tr>
+<td>X</td>
+<td>W</td>
+<td>Z</td>
+<td>X</td>
+<td>V</td>
+<td>I</td>
+</tr>
+</tbody>
+</table>
+<p>ADFGVX:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>D</th>
+<th>F</th>
+<th>G</th>
+<th>V</th>
+<th>X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>P</td>
+<td>H</td>
+<td>0</td>
+<td>Q</td>
+<td>G</td>
+<td>M</td>
+</tr>
+<tr>
+<td>D</td>
+<td>E</td>
+<td>A</td>
+<td>1</td>
+<td>Y</td>
+<td>N</td>
+<td>O</td>
+</tr>
+<tr>
+<td>F</td>
+<td>2</td>
+<td>F</td>
+<td>L</td>
+<td>R</td>
+<td>C</td>
+<td>B</td>
+</tr>
+<tr>
+<td>G</td>
+<td>3</td>
+<td>D</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+</tr>
+<tr>
+<td>V</td>
+<td>W</td>
+<td>4</td>
+<td>Z</td>
+<td>5</td>
+<td>X</td>
+<td>6</td>
+</tr>
+<tr>
+<td>X</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.rzly.net/post/hmisl_course_2/" class="post-title gt-a-link">
+                    「回中网安」2：动手实践初步入门-学习单
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">From the root, begin anew. </div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/iuu6" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Made by <a href="https://github.com/iuu6" target="_blank">IUU6</a> with heart ❤️~
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://blog.rzly.net/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

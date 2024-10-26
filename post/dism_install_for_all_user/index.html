@@ -1,0 +1,208 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>基于WIndows英文原版封装系统为中文时出现的错误修正 | IUU6&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.rzly.net/favicon.ico?v=1729921848626">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.rzly.net/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            IUU6&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            Home
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            Archives
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            Tags
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            About
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/friends" class="menu gt-a-link">
+                            Friends
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1729921848626" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    基于WIndows英文原版封装系统为中文时出现的错误修正
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-03-10 ·
+                    </time>
+                    
+                        <a href="https://blog.rzly.net/tag/system/" class="post-tags">
+                            # System
+                        </a>
+                    
+                        <a href="https://blog.rzly.net/tag/maintain/" class="post-tags">
+                            # Maintain
+                        </a>
+                    
+                        <a href="https://blog.rzly.net/tag/problem/" class="post-tags">
+                            # Problem
+                        </a>
+                    
+                        <a href="https://blog.rzly.net/tag/patch/" class="post-tags">
+                            # Patch
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="报错概览">报错概览</h1>
+<p>在日志文件<strong>setuperr.log</strong>中发现以下类似报错😅</p>
+<figure data-type="image" tabindex="1"><img src="https://blog.rzly.net/post-images/1710039584859.png" alt="" loading="lazy"></figure>
+<pre><code>2024-03-02 16:05:38, Error                 SYSPRP Package Microsoft.LanguageExperiencePackzh-CN_22621.41.188.0_neutral__8wekyb3d8bbwe was installed for a user, but not provisioned for all users. This package will not function properly in the sysprep image.
+2024-03-02 16:05:38, Error                 SYSPRP Failed to remove apps for the current user: 0x80073cf2.
+2024-03-02 16:05:38, Error                 SYSPRP Exit code of RemoveAllApps thread was 0x3cf2.
+2024-03-02 16:05:38, Error                 SYSPRP ActionPlatform::LaunchModule: Failure occurred while executing 'SysprepGeneralizeValidate' from C:\Windows\System32\AppxSysprep.dll; dwRet = 0x3cf2
+2024-03-02 16:05:38, Error                 SYSPRP SysprepSession::Validate: Error in validating actions from C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml; dwRet = 0x3cf2
+2024-03-02 16:05:38, Error                 SYSPRP RunPlatformActions:Failed while validating Sysprep session actions; dwRet = 0x3cf2
+2024-03-02 16:05:38, Error      [0x0f0070] SYSPRP RunDlls:An error occurred while running registry sysprep DLLs, halting sysprep execution. dwRet = 0x3cf2
+2024-03-02 16:05:38, Error      [0x0f00d8] SYSPRP WinMain:Hit failure while pre-validate sysprep generalize internal providers; hr = 0x80073cf2
+</code></pre>
+<h1 id="错误分析">错误分析</h1>
+<p>通过报错可以发现以下报错内容</p>
+<pre><code>SYSPRP Package Microsoft.LanguageExperiencePackzh-CN_22621.41.188.0_neutral__8wekyb3d8bbwe was installed for a user, but not provisioned for all users. This package will not function properly in the sysprep image.
+</code></pre>
+<p>意思是语言包无法正常封装进入系统，因为这个语言仅仅为一个用户安装了<br>
+而我们知道通过微软商城或者add-appxpackage命令安装的包都是仅仅为一个人安装了😣</p>
+<h1 id="问题解决">问题解决</h1>
+<p>通过以下命令可以卸载一个语言包</p>
+<pre><code>remove-appxpackage -allusers -package &quot;Microsoft.LanguageExperiencePackzh-CN_22621.41.188.0_neutral__8wekyb3d8bbwe&quot;
+</code></pre>
+<p>然后通过DISM部署来为所有用户安装</p>
+<pre><code>DISM /Online /Add-ProvisionedAppxPackage /packagePath:&quot;E:\Microsoft.LanguageExperiencePackzh-CN_22621.41.188.0_neutral__8wekyb3d8bbwe.Appx&quot; /SkipLicense
+</code></pre>
+<p>错误修正成功</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.rzly.net/post/vmware_macos_aio/" class="post-title gt-a-link">
+                    VMware安装MacOS系统教程②——简易且可以直接上手的VMware打包系统
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">From the root, begin anew. </div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/iuu6" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Made by <a href="https://github.com/iuu6" target="_blank">IUU6</a> with heart ❤️~
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://blog.rzly.net/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

